@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 from .forms import LoginUserForm
 
@@ -26,6 +26,11 @@ def login_user(request):
 
     form = LoginUserForm()
     return render(request, 'accounts/login_user.html', {'form': form, 'error_message': error_message})
+
+def logout_user(request):
+    logout(request)
+    return redirect('accounts:login_user')
+
 @login_required
 def private_page_one(request):
     return render(request, 'accounts/private_page_one.html')
