@@ -6,6 +6,7 @@ from .forms import LoginUserForm
 
 def login_user(request):
     error_message = ''
+    next_url = request.POST.get('next') or request.GET.get('next') or ''
 
     if request.method == 'POST':
         form = LoginUserForm(request.POST)
@@ -16,7 +17,8 @@ def login_user(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('accounts:private_page_one')
+                redirect_url = next_url or 'accounts:private_page_one'
+                return redirect(redirect_url)
             else:
                 error_message = 'Invalid username or password. Try again.'
         else:
@@ -25,7 +27,7 @@ def login_user(request):
         form = LoginUserForm()
 
     form = LoginUserForm()
-    return render(request, 'accounts/login_user.html', {'form': form, 'error_message': error_message})
+    return render(request, 'accounts/login_user.html', {'form': form, 'error_message': error_message, 'next_url': next_url})
 
 def logout_user(request):
     logout(request)
