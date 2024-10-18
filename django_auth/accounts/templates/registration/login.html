@@ -1,0 +1,10 @@
+<h1>Login page</h1>
+
+<h5>{{ error_message }}</h5>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next_url }}"/>
+    <button type="submit">Login</button>
+</form>
