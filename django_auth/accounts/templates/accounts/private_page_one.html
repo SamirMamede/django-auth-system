@@ -11,4 +11,12 @@
     <strong>Password</strong>:{{ user.password }}
 </p>
 <hr>
-<a href="{% url 'accounts:logout_user' %}"><input type="button" value="Logout"></a>
+<p>
+    <a href="{% url 'accounts:private_page_two' %}"><input type="button" value="private_page_two"></a>
+</p>
+<p>
+    <form action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Logout">
+    </form>
+</p>
