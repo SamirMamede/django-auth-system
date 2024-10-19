@@ -1,0 +1,25 @@
+<style>
+    .button-container {
+        display: flex;
+        gap: 10px;
+    }
+</style>
+
+<div class="button-container">
+    <p>
+        <a href="{% url 'accounts:private_page_one' %}"><input type="button" value="private_page_one"></a>
+    </p>
+    <p>
+        <a href="{% url 'accounts:private_page_two' %}"><input type="button" value="private_page_two"></a>
+    </p>
+    <p>
+        <a href="{% url 'accounts:password_change' %}"><input type="button" value="password_change"></a>
+    </p>
+</div>
+
+<p>
+    <form action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Logout">
+    </form>
+</p>
