@@ -125,3 +125,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/accounts/private_page_one'
 LOGIN_URL = '/accounts/login'
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
