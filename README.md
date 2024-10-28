@@ -54,6 +54,7 @@ Follow the steps below to install and set up the project:
     - password_reset_done/
     - password_reset_confirm/<uidb64>/<token>/
     - password_reset_complete/
+    - register/
 
 ## Features Implementation 📝
 
