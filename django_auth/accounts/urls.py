@@ -6,6 +6,11 @@ app_name = 'accounts'
 
 urlpatterns = [
     path(
+        '', 
+         views.home, 
+         name='home'
+    ),
+    path(
         'login/', 
          auth_views.LoginView.as_view(), 
          name='login'

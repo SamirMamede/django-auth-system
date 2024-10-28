@@ -40,7 +40,7 @@ Follow the steps below to install and set up the project:
 6. Start the development server:
     ```bash
     python manage.py runserver
-7. Access the application in your browser: http://127.0.0.1:8000/accounts/login
+7. Access the application in your browser: http://127.0.0.1:8000/
 
 ### The following routes are available in the application:
 

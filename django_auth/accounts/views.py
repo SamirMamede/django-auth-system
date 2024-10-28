@@ -4,6 +4,8 @@ from django.contrib.auth import logout
 from django.shortcuts import redirect
 from .forms import UserRegistrationForm, LoginUserForm
 
+def home(request):
+    return render(request, 'accounts/home.html')
 @login_required
 def private_page_one(request):
     return render(request, 'accounts/private_page_one.html')
