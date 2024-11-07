@@ -79,6 +79,31 @@ Private pages are accessible only to authenticated users. I used the `@login_req
 ### Basic Front-end Templates
 The front-end templates were created using basic HTML and CSS. The login, registration, and password reset pages were styled to be simple, as the focus of the project was on the back-end. Django Template Language was used to render dynamic data on the pages.
 
+## Tests Implementation 🧪
+
+The project includes comprehensive test coverage for the authentication system. The tests are organized into three main categories:
+
+### Views Tests
+- Home page accessibility
+- Private pages access (both authenticated and unauthenticated)
+- Authentication redirections
+- Template rendering verification
+
+### Registration Tests
+- Registration form display
+- Successful user registration process
+- User creation verification
+
+### Form Tests
+- Login form validation
+- Registration form field validation
+- Form data processing
+
+To run the tests, use the following command:
+```bash
+python manage.py test accounts
+```
+
 ### Contribution 🤝
 
 If you would like to contribute to the project, please follow these steps:
